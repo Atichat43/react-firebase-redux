@@ -2,7 +2,7 @@ import { SET_USER, SET_LOGOUT} from '../actionTypes'
 
 export const setUser = user => ({
   type: SET_USER,
-  user,
+  payload: { user },
 })
 
 export const setLogout = () => ({ 

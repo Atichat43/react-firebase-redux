@@ -2,24 +2,29 @@ import { SET_USER, SET_LOGOUT } from '../actionTypes'
 
 export const initialState = {
   authenticated: false,
-  email: 'your@example.com',
-  firstName: 'Firstname',
-  lastName: 'Lastname',
+  email: null,
+  firstName: null,
+  lastName: null,
+  photoURL: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_USER:
+    case SET_USER: {
+      const { user } = action.payload
+
       return {
         ...state,
-        ...action.payload,
+        ...user,
         authenticated: true,
       };
-    case SET_LOGOUT:
+    }
+    case SET_LOGOUT: {
       return {
-        ...state,
+        ...initialState,
         authenticated: false,
       };
+    }
     default:
       return state;
   }
