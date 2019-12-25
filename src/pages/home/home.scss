@@ -1,0 +1,13 @@
+.menu-bar {
+  display: flex;
+  margin: 3px 0; 
+  padding: 0 5px;
+
+  .menu-bar-item {
+    display: inline-flex;
+
+    &:last-of-type {
+      margin-left: auto;
+    }
+  }
+}
